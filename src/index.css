@@ -28,6 +28,10 @@ body {
   margin: 0 auto;
   width: 100%;
   margin-top: 100px;
+  margin-bottom: 100px;
+}
+.table tbody tr:last-of-type td {
+  border: 0;
 }
 input,
 select {
@@ -103,90 +107,104 @@ select {
 .common-btn:hover:after {
   color: #000;
 }
-input:focus, 
+input:focus,
 select:focus {
-    border-color: #3898ec;
-    outline: 0;
+  border-color: #3898ec;
+  outline: 0;
 }
 input::placeholder,
 select::placeholder {
-    opacity: 1;
+  opacity: 1;
 }
-
+select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>') no-repeat right 12px center;
+	background-color: #f1f7fd;
+	background-size: 20px;
+}
 @media screen and (max-width:1199px) {
-  .title-table-wrapper{
+  .title-table-wrapper {
     margin-top: 35px;
+    margin-bottom: 35px;
   }
 }
-@media screen and (max-width:1023px){
-.title-table-wrapper h2 {
-  font-size: 22px;
+@media screen and (max-width:1023px) {
+  select {
+	background-size: 15px;
 }
-.input-btn-wrap {
-  gap: 10px;
-  margin-top: 15px;
+  .title-table-wrapper h2 {
+    font-size: 22px;
+  }
+  .input-btn-wrap {
+    gap: 10px;
+    margin-top: 15px;
+  }
+  input,
+  select {
+    border-radius: 10px;
+    height: 45px;
+    padding: 0 30px 0 11px;
+    font-size: 13px;
+  }
+  .common-btn {
+    font-size: 14px;
+    padding: 0 15px;
+    line-height: 39px;
+    padding-right: 30px;
+  }
+  .common-btn::after {
+    right: 11px;
+    font-size: 12px;
+  }
+  .table {
+    margin-top: 20px;
+  }
+  .table th,
+  .table td {
+    font-size: 14px;
+  }
 }
-input, 
-select {
-	border-radius: 10px;
-	height: 45px;
-	padding: 0 30px 0 11px;
-	font-size: 13px;
-}
-.common-btn {
-	font-size: 14px;
-	padding: 0 15px;
-	line-height: 39px;
-	padding-right: 30px;
-}
-.common-btn::after {
-	right: 11px;
-	font-size: 12px;
-}
-.table {
-	margin-top: 20px;
-}
-.table th, 
-.table td {
-	font-size: 14px;
-}
-}
-@media screen and (max-width:767px){
+@media screen and (max-width:767px) {
   .input-btn-wrap {
     flex-wrap: wrap;
   }
-   .common-btn {
+  .common-btn {
     width: 100%;
   }
   .common-btn::after {
     top: 0;
   }
-body table.table ,body .table thead,body .table  tbody,body .table   th,body .table   td,body .table   tr {
+  body table.table,
+  body .table thead,
+  body .table tbody,
+  body .table th,
+  body .table td,
+  body .table tr {
     display: block;
     width: 100%;
   }
-
-  body .table    thead {
-    display: none; /* Hide header on mobile */
+  body .table thead {
+    display: none;
+    /* Hide header on mobile */
   }
-
-  body .table   tr {
+  body .table tr {
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
     background: #fff;
   }
-
-  body .table   td {
+  body .table td {
     border: none;
     position: relative;
     padding-left: 50%;
     text-align: left;
   }
-
-  body .table   td::before {
-    content: attr(data-label); /* Use data-label attribute for headers */
+  body .table td::before {
+    content: attr(data-label);
+    /* Use data-label attribute for headers */
     position: absolute;
     left: 10px;
     top: 12px;
@@ -194,13 +212,14 @@ body table.table ,body .table thead,body .table  tbody,body .table   th,body .ta
     text-transform: capitalize;
   }
   body .table tr td:last-of-type {
-  border: 0;
-}
- body .table td {
+    border: 0;
+  }
+  body .table td, 
+  .table tbody tr:last-of-type td:not(:last-of-type) {
     border-bottom: 1px solid #e3e3e3;
   }
   .title-table-wrapper {
     margin-top: 15px;
+    margin-bottom: 15px;
   }
 }
- 
