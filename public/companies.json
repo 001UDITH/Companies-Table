@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Nebula Tech",
+    "location": "Bengaluru",
+    "industry": "SaaS"
+  },
+  {
+    "id": 2,
+    "name": "Aqua Labs",
+    "location": "Mumbai",
+    "industry": "Biotech"
+  },
+  {
+    "id": 3,
+    "name": "Peak Analytics",
+    "location": "Hyderabad",
+    "industry": "Analytics"
+  },
+  {
+    "id": 4,
+    "name": "Greenfield Energy",
+    "location": "Delhi",
+    "industry": "Energy"
+  },
+  {
+    "id": 5,
+    "name": "Orbit Retail",
+    "location": "Chennai",
+    "industry": "Retail"
+  },
+  {
+    "id": 6,
+    "name": "Cloudtide",
+    "location": "Bengaluru",
+    "industry": "Cloud"
+  },
+  {
+    "id": 7,
+    "name": "MedPulse",
+    "location": "Pune",
+    "industry": "Healthcare"
+  },
+  {
+    "id": 8,
+    "name": "Finmatrix",
+    "location": "Mumbai",
+    "industry": "Fintech"
+  },
+  {
+    "id": 9,
+    "name": "SmartSupply",
+    "location": "Gurugram",
+    "industry": "Logistics"
+  },
+  {
+    "id": 10,
+    "name": "EduForge",
+    "location": "Jaipur",
+    "industry": "EdTech"
+  }
+]
