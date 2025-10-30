@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
 
 function CompaniesDirectory() {
+  const notify = () => toast('Filter Reset completed !');
+
   const [companies, setCompanies] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [error, setError] = useState("");
@@ -105,10 +108,11 @@ function CompaniesDirectory() {
           ))}
         </select>
 
-        <button className="common-btn" onClick={resetFilter}>Reset</button>
+        <button  className="common-btn"  onClick={() => { resetFilter(); notify(); }}>Reset</button>
+        <ToastContainer />
       </div>
 
-      <table border="1" cellPadding="5">
+      <table border="1" cellPadding="5" className="table">
         <thead>
           <tr>
             <th>ID</th>
@@ -118,21 +122,22 @@ function CompaniesDirectory() {
           </tr>
         </thead>
         <tbody>
-          {filtered.length > 0 ? (
-            filtered.map((c) => (
-              <tr key={c.id}>
-                <td>{c.id}</td>
-                <td>{c.name}</td>
-                <td>{c.location}</td>
-                <td>{c.industry}</td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="4">No results foundpakvmne;lwrjng'orew</td>
-            </tr>
-          )}
-        </tbody>
+  {filtered.length > 0 ? (
+    filtered.map((c) => (
+      <tr key={c.id}>
+        <td data-label="ID">{c.id}</td>
+        <td data-label="Company Name">{c.name}</td>
+        <td data-label="Location">{c.location}</td>
+        <td data-label="Industry">{c.industry}</td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <td colSpan="4" className="error">No results found</td>
+    </tr>
+  )}
+</tbody>
+
       </table>
     </div>
 
